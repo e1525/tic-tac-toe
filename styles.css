@@ -1,55 +1,65 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
 body {
-  margin: 0;
-  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f0f0f0;
 }
 
-.winningMessage {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 50px;
+.turn {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
 }
 
 .board {
-  height: 500px;
-  width: 500px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  background-color: #333;
+  padding: 5px;
+  border-radius: 10px;
 }
 
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-button {
+.cell {
   background-color: white;
-  border: 2px solid black;
+  border: none;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-button:nth-child(1),
-button:nth-child(2),
-button:nth-child(3) {
-  border-top: none;
+.cell:hover {
+  background-color: #f5f5f5;
 }
 
-button:nth-child(7),
-button:nth-child(8),
-button:nth-child(9) {
-  border-bottom: none;
+.cell:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
 }
 
-button:nth-child(3n + 1) {
-  border-left: none;
+.game-over {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c5aa0;
 }
 
-button:nth-child(3n + 3) {
-  border-right: none;
+.reset-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #2c5aa0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
+.reset-btn:hover {
+  background-color: #1e3f73;
+}
